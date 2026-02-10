@@ -72,5 +72,5 @@ export default defineConfig([
 ])
 ```
 ```
-preview(wip): https://react-portfolio-7rdy2pcei-apisitkittis-projects.vercel.app/
+[preview](https://react-portfolio-black-one.vercel.app/)
 ```
