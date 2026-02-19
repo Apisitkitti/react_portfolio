@@ -6,7 +6,6 @@ const projects = [
     description:
       "Developed and deployed ERP system under evolving requirements, focusing on scalable UI architecture, performance optimization, and real-world production workflows.",
     tech: ["React", "Next.js", "TypeScript"],
-    demo: "#",
   },
   {
     title: "Wongnai UI Clone",
