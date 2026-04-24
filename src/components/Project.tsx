@@ -18,9 +18,23 @@ const projects = [
   {
     title: "CP Brandsite Member Platform",
     description:
-      "Implemented production-ready frontend features for a large-scale membership platform including profile management, tracking flows, and campaign UI with responsive design and performance focus.",
+      "Implemented production-ready frontend features with a backend for a large-scale membership platform including profile management, tracking flows, and campaign UI with responsive design and performance focus.",
     tech: ["Next.js", "Firebase"],
     demo: "https://member.cpbrandsite.com/",
+  },
+  {
+    title: "CP Brandsite  Loss Weight Challenge Internal Event Website ",
+    description:
+      "Implemented production-ready frontend features for for internal event website, including profile management and campaign UI with responsive design and performance focus.",
+    tech: ["Next.js", "Directus"],
+  },
+  {
+    title: "UXUI Personal Portfolio",
+    description:
+      "Implemented a modern portfolio with responsive layouts, optimized assets, and smooth user experience from design.",
+    tech: ["Astro.js", "TailwindCSS"],
+    github: "https://github.com/Apisitkitti/tripop_portfolio",
+    demo: "https://tripop-portfolio.netlify.app/",
   },
 ];
 
