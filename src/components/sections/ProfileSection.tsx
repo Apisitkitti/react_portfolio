@@ -1,4 +1,5 @@
 import { SectionId } from "../../route";
+import DownloadLinks from "../ui/DownloadLinks";
 
 const ProfileSection = () => {
   return (
@@ -22,20 +23,18 @@ const ProfileSection = () => {
 
         {/* Description */}
         <p className="text-gray-600 leading-relaxed text-lg md:text-xl max-w-3xl mx-auto">
-          <span className="text-blue-700 font-semibold">
-            Frontend-focused Software Developer
-          </span>{" "}
-          with hands-on experience building production-ready web applications
-          using React, Next.js, and TypeScript. Focused on creating scalable UI
-          architectures, improving performance, and delivering clean,
-          maintainable user interfaces.
+          <span className="text-blue-700 font-semibold">Software Developer</span>{" "}
+          with hands-on experience building and deploying production web
+          applications end to end — from UI to API and database — using React,
+          Next.js, NestJS, and TypeScript. Focused on scalable architecture,
+          performance, and clean, maintainable code.
         </p>
 
         {/* Highlight tags */}
         <div className="flex flex-wrap justify-center gap-4 pt-4">
           {[
             "Production Experience",
-            "Scalable UI",
+            "Fullstack Delivery",
             "Performance Focused",
             "Clean Architecture",
           ].map((item) => (
@@ -47,6 +46,8 @@ const ProfileSection = () => {
             </span>
           ))}
         </div>
+        {/* Documents */}
+        <DownloadLinks />
       </div>
     </section>
   );

@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
 import githubIcon from "../../assets/icon/github.png";
 import linkedinIcon from "../../assets/icon/linkedin.png";
 import { ROUTES, SectionId, SOCIAL_LINKS } from "../../route";
+import DownloadLinks from "../ui/DownloadLinks";
+import { LinkButton } from "../ui/Button";
 
 const socials = [
   {
@@ -54,21 +55,14 @@ const HeroSection = () => {
           ))}
         </div>
 
-        {/* CTA */}
+        {/* CTA + documents */}
         <div className="flex flex-wrap justify-center gap-4 pt-4">
-          <Link
-            to={ROUTES.PROJECTS}
-            className="px-6 py-3 rounded-full bg-gray-900 text-white text-sm font-medium hover:bg-gray-700 transition-colors"
-          >
+          <LinkButton to={ROUTES.PROJECTS} variant="solid">
             View Projects
-          </Link>
-          <Link
-            to={ROUTES.ABOUT}
-            className="px-6 py-3 rounded-full border border-gray-300 text-sm font-medium hover:border-gray-900 transition-colors"
-          >
-            About Me
-          </Link>
+          </LinkButton>
+          <LinkButton to={ROUTES.ABOUT}>About Me</LinkButton>
         </div>
+        <DownloadLinks />
       </div>
     </section>
   );
