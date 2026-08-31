@@ -1,17 +1,18 @@
-import githubIcon from "../assets/icon/github.png";
-import linkedinIcon from "../assets/icon/linkedin.png";
-import { SectionId } from "../route";
+import { Link } from "react-router-dom";
+import githubIcon from "../../assets/icon/github.png";
+import linkedinIcon from "../../assets/icon/linkedin.png";
+import { ROUTES, SectionId, SOCIAL_LINKS } from "../../route";
 
 const socials = [
   {
     img: githubIcon,
     alt: "github",
-    url: "https://github.com/Apisitkitti",
+    url: SOCIAL_LINKS.GITHUB,
   },
   {
     img: linkedinIcon,
     alt: "linkedin",
-    url: "https://www.linkedin.com/in/apisit-kittiruangaram-938669206/",
+    url: SOCIAL_LINKS.LINKEDIN,
   },
 ];
 
@@ -19,7 +20,7 @@ const HeroSection = () => {
   return (
     <section
       id={SectionId.HOME}
-      className="w-full flex min-h-screen items-center justify-center bg-white text-gray-900 px-6"
+      className="w-full flex min-h-[80vh] items-center justify-center bg-white text-gray-900 px-6"
     >
       <div className=" text-center space-y-6">
         {/* Greeting */}
@@ -51,6 +52,22 @@ const HeroSection = () => {
               />
             </a>
           ))}
+        </div>
+
+        {/* CTA */}
+        <div className="flex flex-wrap justify-center gap-4 pt-4">
+          <Link
+            to={ROUTES.PROJECTS}
+            className="px-6 py-3 rounded-full bg-gray-900 text-white text-sm font-medium hover:bg-gray-700 transition-colors"
+          >
+            View Projects
+          </Link>
+          <Link
+            to={ROUTES.ABOUT}
+            className="px-6 py-3 rounded-full border border-gray-300 text-sm font-medium hover:border-gray-900 transition-colors"
+          >
+            About Me
+          </Link>
         </div>
       </div>
     </section>

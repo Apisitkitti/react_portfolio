@@ -1,12 +1,18 @@
 import { useState } from "react";
-import { SectionId } from "../route";
-import HamburgerIcon from "../assets/icon/hamburger.svg";
+import { NavLink, Link } from "react-router-dom";
+import { ROUTES } from "../../route";
+import HamburgerIcon from "../../assets/icon/hamburger.svg";
 
-const sections = [
-  { id: SectionId.HOME, name: "Home" },
-  { id: SectionId.ABOUT, name: "About" },
-  { id: SectionId.PROJECTS, name: "Projects" },
+const navItems = [
+  { to: ROUTES.HOME, name: "Home", end: true },
+  { to: ROUTES.ABOUT, name: "About", end: false },
+  { to: ROUTES.PROJECTS, name: "Projects", end: false },
 ];
+
+const linkClass = ({ isActive }: { isActive: boolean }) =>
+  isActive
+    ? "text-white transition-colors"
+    : "text-gray-300 hover:text-white transition-colors";
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -29,25 +35,22 @@ const Navbar: React.FC = () => {
           </button>
 
           {/* Logo */}
-          <a
+          <Link
             className="text-lg font-semibold tracking-widest cursor-pointer"
-            href={`#${SectionId.HOME}`}
+            to={ROUTES.HOME}
           >
             APISIT
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:block">
           <ul className="flex items-center gap-8 text-md font-medium tracking-wide">
-            {sections.map((item) => (
-              <li key={item.id}>
-                <a
-                  href={`#${item.id}`}
-                  className="relative text-gray-300 hover:text-white transition-colors"
-                >
+            {navItems.map((item) => (
+              <li key={item.to}>
+                <NavLink to={item.to} end={item.end} className={linkClass}>
                   {item.name}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -58,15 +61,16 @@ const Navbar: React.FC = () => {
       {open && (
         <nav className="md:hidden border-t border-neutral-800">
           <ul className="flex flex-col px-6 py-4 gap-4">
-            {sections.map((item) => (
-              <li key={item.id}>
-                <a
-                  href={`#${item.id}`}
+            {navItems.map((item) => (
+              <li key={item.to}>
+                <NavLink
+                  to={item.to}
+                  end={item.end}
                   onClick={() => setOpen(false)}
-                  className="block text-gray-300 hover:text-white"
+                  className={linkClass}
                 >
                   {item.name}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>

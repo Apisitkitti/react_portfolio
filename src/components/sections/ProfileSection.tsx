@@ -1,4 +1,4 @@
-import { SectionId } from "../constant";
+import { SectionId } from "../../route";
 
 const ProfileSection = () => {
   return (
